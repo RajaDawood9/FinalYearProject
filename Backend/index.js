@@ -14,6 +14,12 @@ const corsOptions = {
   credentials: true, 
   optionSuccessStatus: 200,
 };
+
+app.get("/",(req,res) => {
+  res.json("Hello");
+}
+
+)
 // app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
