@@ -9,11 +9,26 @@ require("./config/db.js");
 // app.use(express.json());
 // const authRoutes =
 // const student = require("./routes/allUser.js");
+const allowedOrigins = [
+  "https://fms-a2uj8tzlw-raja-dawoods-projects.vercel.app", // Add your frontend URLs here
+  "https://fms-r94edfzf9-raja-dawoods-projects.vercel.app/",
+  "http://localhost:5173",
+];
+
 const corsOptions = {
-  origin: "https://fms-b8iulb5vc-raja-dawoods-projects.vercel.app" || "http://localhost:5173",
-  credentials: true, 
-  optionSuccessStatus: 200,
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      // Allow requests with no origin (like mobile apps or Postman)
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
+
+app.use(cors(corsOptions));
 
 app.get("/",(req,res) => {
   res.json("Hello");
