@@ -10,7 +10,7 @@ require("./config/db.js");
 // const authRoutes =
 // const student = require("./routes/allUser.js");
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://fms-b8iulb5vc-raja-dawoods-projects.vercel.app" || "http://localhost:5173",
   credentials: true, 
   optionSuccessStatus: 200,
 };
