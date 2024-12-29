@@ -12,7 +12,7 @@ require("./config/db.js");
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
-      "https://fms-a2uj8tzlw-raja-dawoods-projects.vercel.app", 
+      "https://fms-a2uj8tzlw-raja-dawoods-projects.vercel.app",
       "https://fms-r94edfzf9-raja-dawoods-projects.vercel.app",
       "https://fms-f-raja-dawoods-projects.vercel.app",
       "https://fms-f.vercel.app",
@@ -30,17 +30,14 @@ const corsOptions = {
 };
 
 // Apply CORS options globally
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Ensure handling preflight OPTIONS requests
-app.options("*", cors(corsOptions));  // Respond to OPTIONS requests
+app.options("*", cors(corsOptions)); // Respond to OPTIONS requests
 
-
-app.get("/",(req,res) => {
+app.get("/", (req, res) => {
   res.json("Hello");
-}
-
-)
+});
 // app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
@@ -53,4 +50,6 @@ createTables()
     console.error("Error occurred during table creation:", error);
   });
 app.use("/api", require("./routes/userRoute.js"));
-app.listen(process.env.BACKEND_PORT, () => console.log(`node server use nodemon runing port`));
+app.listen(process.env.BACKEND_PORT, () =>
+  console.log(`node server use nodemon runing port`)
+);
