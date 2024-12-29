@@ -6,15 +6,16 @@ const { createTables } = require("./models/createTable.js");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 require("./config/db.js");
-
-// CORS Configuration
+// app.use(express.json());
+// const authRoutes =
+// const student = require("./routes/allUser.js");
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
       "https://fms-a2uj8tzlw-raja-dawoods-projects.vercel.app", 
       "https://fms-r94edfzf9-raja-dawoods-projects.vercel.app",
       "https://fms-f-raja-dawoods-projects.vercel.app",
-      "https://fms-f.vercel.app", // Removed trailing slash
+      "https://fms-f.vercel.app",
       "http://localhost:5173",
     ];
 
@@ -28,20 +29,22 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-// Apply CORS middleware
+// Apply CORS options globally
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Handle OPTIONS requests
 
-// Middleware for parsing and cookies
-app.use(bodyParser.json());
-app.use(cookieParser());
+// Ensure handling preflight OPTIONS requests
+app.options("*", cors(corsOptions));  // Respond to OPTIONS requests
 
-// Test route
-app.get("/", (req, res) => {
+
+app.get("/",(req,res) => {
   res.json("Hello");
-});
+}
 
-// Create tables in the database
+)
+// app.use(express.json());
+app.use(bodyParser.json());
+app.use(cors(corsOptions));
+app.use(cookieParser());
 createTables()
   .then(() => {
     console.log("Table creation or verification complete.");
@@ -49,11 +52,5 @@ createTables()
   .catch((error) => {
     console.error("Error occurred during table creation:", error);
   });
-
-// Routes
 app.use("/api", require("./routes/userRoute.js"));
-
-// Start the server
-app.listen(process.env.BACKEND_PORT, () =>
-  console.log(`Node server running on port ${process.env.BACKEND_PORT}`)
-);
+app.listen(process.env.BACKEND_PORT, () => console.log(`node server use nodemon runing port`));
