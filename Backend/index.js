@@ -1,6 +1,7 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
+const app = express();
+app.use(cors());
 const bodyParser = require("body-parser");
 const { createTables } = require("./models/createTable.js");
 const cookieParser = require("cookie-parser");
@@ -30,10 +31,9 @@ const corsOptions = {
 };
 
 // Apply CORS options globally
-app.use(cors());
 
 // Ensure handling preflight OPTIONS requests
-app.options("*", cors(corsOptions)); // Respond to OPTIONS requests
+// app.options("*", cors(corsOptions)); // Respond to OPTIONS requests
 
 app.get("/", (req, res) => {
   res.json("Hello");
