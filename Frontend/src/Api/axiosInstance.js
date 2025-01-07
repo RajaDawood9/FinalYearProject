@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL || "https://fms-f.vercel.app/",
-  // baseURL: "https://fms-b.vercel.app/",
+ 
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
