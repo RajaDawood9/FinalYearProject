@@ -27,7 +27,7 @@ const Navbar = () => {
     <header className="flex items-center justify-between shadow-xl w-full z-[999] sticky top-0 left-0 right-0 bg-white">
       <div className="rounded-lg">
         <img
-          src="public/NCBA.jpg"
+          src="../public/NCBA.jpg"
           className="h-[3rem] w-30 ml-3"
           alt="Logo"
         />
