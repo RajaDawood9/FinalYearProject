@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="rounded-lg">
         <img
           src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJluxW7GzUnyqwWU8j2NJca7dR9smuidxpX_YUYAMhPDOrOwpO4ym5GRdFnIKPykpA_Q&usqp=CAU"
-          className="h-[3rem] w-30 h-50 ml-3"
+          className="h-[3rem] w-40 ml-3"
           alt="Logo"
         />
       </div>
