@@ -27,7 +27,7 @@ const Navbar = () => {
     <header className="flex items-center justify-between shadow-xl w-full z-[999] sticky top-0 left-0 right-0 bg-white">
       <div className="rounded-lg">
         <img
-          src= "https://www.hec.gov.pk/english/universities/PublishingImages/NCBAE-Logo.jpg"
+          src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJluxW7GzUnyqwWU8j2NJca7dR9smuidxpX_YUYAMhPDOrOwpO4ym5GRdFnIKPykpA_Q&usqp=CAU"
           className="h-[3rem] w-30 ml-3"
           alt="Logo"
         />
