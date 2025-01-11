@@ -1,7 +1,8 @@
 const pool = require("../config/pgdb");
 
 const studentEnrollCourse = async (req, res) => {
-  const student_id = req.cookies.student_id;
+  // const student_id = req.cookies.student_id;
+  const student_id = req?.user?.userId;
 
   if (!student_id) {
     return res.status(401).json({ error: "Not authenticated" });
