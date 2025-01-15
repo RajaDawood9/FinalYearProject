@@ -36,13 +36,13 @@ const enrollInCourse = async (req, res) => {
   console.log(student_id);
   const { course_id } = req.body;
 
-  if (!student_id) {
-    return res.status(401).json({ error: "Not authenticated" });
-  }
+  // if (!student_id) {
+  //   return res.status(401).json({ error: "Not authenticated" });
+  // }
 
-  if (!course_id) {
-    return res.status(400).json({ error: "Course ID is required" });
-  }
+  // if (!course_id) {
+  //   return res.status(400).json({ error: "Course ID is required" });
+  // }
 
   const checkEnrollmentQuery = `
       SELECT * FROM enrollments
