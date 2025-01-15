@@ -30,7 +30,9 @@ const studentEnrollCourse = async (req, res) => {
 };
 
 const enrollInCourse = async (req, res) => {
-  const student_id = req.cookies.student_id;
+// const student_id = req.cookies.student_id;
+    const student_id = req?.user?.userId;
+
   console.log(student_id);
   const { course_id } = req.body;
 
