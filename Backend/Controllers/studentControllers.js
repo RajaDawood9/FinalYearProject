@@ -1,7 +1,8 @@
 const pool = require("../config/pgdb");
 
 const studentEnrollCourse = async (req, res) => {
-  const student_id = req.cookies.student_id;
+  // const student_id = req.cookies.student_id;
+  const student_id = req?.user?.userId;
 
   if (!student_id) {
     return res.status(401).json({ error: "Not authenticated" });
@@ -29,17 +30,19 @@ const studentEnrollCourse = async (req, res) => {
 };
 
 const enrollInCourse = async (req, res) => {
-  const student_id = req.cookies.student_id;
+// const student_id = req.cookies.student_id;
+    const student_id = req?.user?.userId;
+
   console.log(student_id);
   const { course_id } = req.body;
 
-  if (!student_id) {
-    return res.status(401).json({ error: "Not authenticated" });
-  }
+  // if (!student_id) {
+  //   return res.status(401).json({ error: "Not authenticated" });
+  // }
 
-  if (!course_id) {
-    return res.status(400).json({ error: "Course ID is required" });
-  }
+  // if (!course_id) {
+  //   return res.status(400).json({ error: "Course ID is required" });
+  // }
 
   const checkEnrollmentQuery = `
       SELECT * FROM enrollments
