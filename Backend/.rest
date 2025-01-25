@@ -18,3 +18,6 @@ Content-Type: application/json
      "password":"ali"
 }
 
+### Get All Students
+GET http://fms-b.vercel.app/api/getallStudents
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZmZTdmOTYwZjE4ZGJhNWFlNDRiMWQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mzc4MjQ2NTUsImV4cCI6MTczNzkxMTA1NX0.y3g6_Mk4Yxf7TxZr3B4wGd7sTR0A95eWvrFIY14419Q

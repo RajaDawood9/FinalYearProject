@@ -14,7 +14,7 @@ const allowedOrigins = [
   "https://fms-r94edfzf9-raja-dawoods-projects.vercel.app",
   "https://fms-f-raja-dawoods-projects.vercel.app",
   "https://fms-f.vercel.app",
-  "http://localhost:5173",
+  "http://localhost:5173"
 ];
 
 const corsOptions = {
