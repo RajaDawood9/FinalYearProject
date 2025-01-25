@@ -41,7 +41,7 @@ app.options("*", cors(corsOptions)); // Explicitly handle OPTIONS requests
 
 // Routes
 app.get("/", (req, res) => {
-  res.json("Raja Dawood /n Muddassir Khan /n Mahnoor Rasheed");
+  res.json("Raja_Dawood ,Muddassir_Khan ,Mahnoor_Rasheed");
 });
 
 app.use("/api", require("./routes/userRoute.js"));
